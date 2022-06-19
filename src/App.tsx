@@ -7,7 +7,7 @@ import Products from "./ProductsComponent";
 import ShopCart from "./ShopCart";
 
 type ProductsContextType = {
-  products: Record<string, number>; 
+  products: Record<string, number>;
   count: number;
 }
 
@@ -21,7 +21,6 @@ export const ProductsContext =
 
 function App() {
   const [state, setState] = React.useState(initState);
-
   const addProductToCart = (productID: string) => {
     setState((prevState) => {
       const newState = { ...prevState };
@@ -80,8 +79,8 @@ function App() {
           ></Route>
           <Route
             path="/cart"
-            element={<ShopCart 
-              onRemove={removeProductFromCart} 
+            element={<ShopCart
+              onRemove={removeProductFromCart}
               increment={increment}
               decrement={decrement}
             />}
